@@ -279,6 +279,91 @@ func (*ExpireApiKeyResponse) Descriptor() ([]byte, []int) {
 	return file_headscale_v1_apikey_proto_rawDescGZIP(), []int{4}
 }
 
+type DeleteApiKeyRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Prefix string `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
+}
+
+func (x *DeleteApiKeyRequest) Reset() {
+	*x = DeleteApiKeyRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_headscale_v1_apikey_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteApiKeyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteApiKeyRequest) ProtoMessage() {}
+
+func (x *DeleteApiKeyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_headscale_v1_apikey_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteApiKeyRequest.ProtoReflect.Descriptor instead.
+func (*DeleteApiKeyRequest) Descriptor() ([]byte, []int) {
+	return file_headscale_v1_apikey_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DeleteApiKeyRequest) GetPrefix() string {
+	if x != nil {
+		return x.Prefix
+	}
+	return ""
+}
+
+type DeleteApiKeyResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *DeleteApiKeyResponse) Reset() {
+	*x = DeleteApiKeyResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_headscale_v1_apikey_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteApiKeyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteApiKeyResponse) ProtoMessage() {}
+
+func (x *DeleteApiKeyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_headscale_v1_apikey_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteApiKeyResponse.ProtoReflect.Descriptor instead.
+func (*DeleteApiKeyResponse) Descriptor() ([]byte, []int) {
+	return file_headscale_v1_apikey_proto_rawDescGZIP(), []int{6}
+}
+
 type ListApiKeysRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -288,7 +373,7 @@ type ListApiKeysRequest struct {
 func (x *ListApiKeysRequest) Reset() {
 	*x = ListApiKeysRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_headscale_v1_apikey_proto_msgTypes[5]
+		mi := &file_headscale_v1_apikey_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -301,7 +386,7 @@ func (x *ListApiKeysRequest) String() string {
 func (*ListApiKeysRequest) ProtoMessage() {}
 
 func (x *ListApiKeysRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_headscale_v1_apikey_proto_msgTypes[5]
+	mi := &file_headscale_v1_apikey_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -314,7 +399,7 @@ func (x *ListApiKeysRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListApiKeysRequest.ProtoReflect.Descriptor instead.
 func (*ListApiKeysRequest) Descriptor() ([]byte, []int) {
-	return file_headscale_v1_apikey_proto_rawDescGZIP(), []int{5}
+	return file_headscale_v1_apikey_proto_rawDescGZIP(), []int{7}
 }
 
 type ListApiKeysResponse struct {
@@ -328,7 +413,7 @@ type ListApiKeysResponse struct {
 func (x *ListApiKeysResponse) Reset() {
 	*x = ListApiKeysResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_headscale_v1_apikey_proto_msgTypes[6]
+		mi := &file_headscale_v1_apikey_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -341,7 +426,7 @@ func (x *ListApiKeysResponse) String() string {
 func (*ListApiKeysResponse) ProtoMessage() {}
 
 func (x *ListApiKeysResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_headscale_v1_apikey_proto_msgTypes[6]
+	mi := &file_headscale_v1_apikey_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -354,7 +439,7 @@ func (x *ListApiKeysResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListApiKeysResponse.ProtoReflect.Descriptor instead.
 func (*ListApiKeysResponse) Descriptor() ([]byte, []int) {
-	return file_headscale_v1_apikey_proto_rawDescGZIP(), []int{6}
+	return file_headscale_v1_apikey_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListApiKeysResponse) GetApiKeys() []*ApiKey {
@@ -398,16 +483,20 @@ var file_headscale_v1_apikey_proto_rawDesc = []byte{
 	0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x70, 0x72, 0x65, 0x66,
 	0x69, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78,
 	0x22, 0x16, 0x0a, 0x14, 0x45, 0x78, 0x70, 0x69, 0x72, 0x65, 0x41, 0x70, 0x69, 0x4b, 0x65, 0x79,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x14, 0x0a, 0x12, 0x4c, 0x69, 0x73, 0x74,
-	0x41, 0x70, 0x69, 0x4b, 0x65, 0x79, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x46,
-	0x0a, 0x13, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x69, 0x4b, 0x65, 0x79, 0x73, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x08, 0x61, 0x70, 0x69, 0x5f, 0x6b, 0x65, 0x79,
-	0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x68, 0x65, 0x61, 0x64, 0x73, 0x63,
-	0x61, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70, 0x69, 0x4b, 0x65, 0x79, 0x52, 0x07, 0x61,
-	0x70, 0x69, 0x4b, 0x65, 0x79, 0x73, 0x42, 0x29, 0x5a, 0x27, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
-	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6a, 0x75, 0x61, 0x6e, 0x66, 0x6f, 0x6e, 0x74, 0x2f, 0x68, 0x65,
-	0x61, 0x64, 0x73, 0x63, 0x61, 0x6c, 0x65, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x76,
-	0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x0a, 0x13, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x41, 0x70, 0x69, 0x4b, 0x65, 0x79, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x16, 0x0a, 0x06, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x06, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x22, 0x16, 0x0a, 0x14, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x41, 0x70, 0x69, 0x4b, 0x65, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x14, 0x0a, 0x12, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x69, 0x4b, 0x65, 0x79, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x46, 0x0a, 0x13, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x69,
+	0x4b, 0x65, 0x79, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2f, 0x0a, 0x08,
+	0x61, 0x70, 0x69, 0x5f, 0x6b, 0x65, 0x79, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14,
+	0x2e, 0x68, 0x65, 0x61, 0x64, 0x73, 0x63, 0x61, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x41, 0x70,
+	0x69, 0x4b, 0x65, 0x79, 0x52, 0x07, 0x61, 0x70, 0x69, 0x4b, 0x65, 0x79, 0x73, 0x42, 0x29, 0x5a,
+	0x27, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6a, 0x75, 0x61, 0x6e,
+	0x66, 0x6f, 0x6e, 0x74, 0x2f, 0x68, 0x65, 0x61, 0x64, 0x73, 0x63, 0x61, 0x6c, 0x65, 0x2f, 0x67,
+	0x65, 0x6e, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -422,22 +511,24 @@ func file_headscale_v1_apikey_proto_rawDescGZIP() []byte {
 	return file_headscale_v1_apikey_proto_rawDescData
 }
 
-var file_headscale_v1_apikey_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_headscale_v1_apikey_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_headscale_v1_apikey_proto_goTypes = []interface{}{
 	(*ApiKey)(nil),                // 0: headscale.v1.ApiKey
 	(*CreateApiKeyRequest)(nil),   // 1: headscale.v1.CreateApiKeyRequest
 	(*CreateApiKeyResponse)(nil),  // 2: headscale.v1.CreateApiKeyResponse
 	(*ExpireApiKeyRequest)(nil),   // 3: headscale.v1.ExpireApiKeyRequest
 	(*ExpireApiKeyResponse)(nil),  // 4: headscale.v1.ExpireApiKeyResponse
-	(*ListApiKeysRequest)(nil),    // 5: headscale.v1.ListApiKeysRequest
-	(*ListApiKeysResponse)(nil),   // 6: headscale.v1.ListApiKeysResponse
-	(*timestamppb.Timestamp)(nil), // 7: google.protobuf.Timestamp
+	(*DeleteApiKeyRequest)(nil),   // 5: headscale.v1.DeleteApiKeyRequest
+	(*DeleteApiKeyResponse)(nil),  // 6: headscale.v1.DeleteApiKeyResponse
+	(*ListApiKeysRequest)(nil),    // 7: headscale.v1.ListApiKeysRequest
+	(*ListApiKeysResponse)(nil),   // 8: headscale.v1.ListApiKeysResponse
+	(*timestamppb.Timestamp)(nil), // 9: google.protobuf.Timestamp
 }
 var file_headscale_v1_apikey_proto_depIdxs = []int32{
-	7, // 0: headscale.v1.ApiKey.expiration:type_name -> google.protobuf.Timestamp
-	7, // 1: headscale.v1.ApiKey.created_at:type_name -> google.protobuf.Timestamp
-	7, // 2: headscale.v1.ApiKey.last_seen:type_name -> google.protobuf.Timestamp
-	7, // 3: headscale.v1.CreateApiKeyRequest.expiration:type_name -> google.protobuf.Timestamp
+	9, // 0: headscale.v1.ApiKey.expiration:type_name -> google.protobuf.Timestamp
+	9, // 1: headscale.v1.ApiKey.created_at:type_name -> google.protobuf.Timestamp
+	9, // 2: headscale.v1.ApiKey.last_seen:type_name -> google.protobuf.Timestamp
+	9, // 3: headscale.v1.CreateApiKeyRequest.expiration:type_name -> google.protobuf.Timestamp
 	0, // 4: headscale.v1.ListApiKeysResponse.api_keys:type_name -> headscale.v1.ApiKey
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
@@ -513,7 +604,7 @@ func file_headscale_v1_apikey_proto_init() {
 			}
 		}
 		file_headscale_v1_apikey_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListApiKeysRequest); i {
+			switch v := v.(*DeleteApiKeyRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -525,6 +616,30 @@ func file_headscale_v1_apikey_proto_init() {
 			}
 		}
 		file_headscale_v1_apikey_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DeleteApiKeyResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_headscale_v1_apikey_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ListApiKeysRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_headscale_v1_apikey_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListApiKeysResponse); i {
 			case 0:
 				return &v.state
@@ -543,7 +658,7 @@ func file_headscale_v1_apikey_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_headscale_v1_apikey_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -34,6 +34,7 @@ func init() {
 		log.Fatal().Err(err).Msg("")
 	}
 	apiKeysCmd.AddCommand(expireAPIKeyCmd)
+	apiKeysCmd.AddCommand(deleteAPIKeyCmd)
 }
 
 var apiKeysCmd = &cobra.Command{
@@ -197,5 +198,46 @@ var expireAPIKeyCmd = &cobra.Command{
 		}
 
 		SuccessOutput(response, "Key expired", output)
+	},
+}
+
+var deleteAPIKeyCmd = &cobra.Command{
+	Use:     "delete",
+	Short:   "Delete an ApiKey",
+	Aliases: []string{"delete", "del", "d"},
+	Run: func(cmd *cobra.Command, args []string) {
+		output, _ := cmd.Flags().GetString("output")
+
+		prefix, err := cmd.Flags().GetString("prefix")
+		if err != nil {
+			ErrorOutput(
+				err,
+				fmt.Sprintf("Error getting prefix from CLI flag: %s", err),
+				output,
+			)
+
+			return
+		}
+
+		ctx, client, conn, cancel := getHeadscaleCLIClient()
+		defer cancel()
+		defer conn.Close()
+
+		request := &v1.DeleteApiKeyRequest{
+			Prefix: prefix,
+		}
+
+		response, err := client.DeleteApiKey(ctx, request)
+		if err != nil {
+			ErrorOutput(
+				err,
+				fmt.Sprintf("Cannot delete Api Key: %s\n", err),
+				output,
+			)
+
+			return
+		}
+
+		SuccessOutput(response, "Key deleted", output)
 	},
 }

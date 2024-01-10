@@ -500,6 +500,26 @@ func (api headscaleV1APIServer) ExpireApiKey(
 	return &v1.ExpireApiKeyResponse{}, nil
 }
 
+func (api headscaleV1APIServer) DeleteApiKey(
+	ctx context.Context,
+	request *v1.DeleteApiKeyRequest,
+) (*v1.DeleteApiKeyResponse, error) {
+	var apiKey *types.APIKey
+	var err error
+
+	apiKey, err = api.h.db.GetAPIKey(request.Prefix)
+	if err != nil {
+		return nil, err
+	}
+
+	err = api.h.db.DestroyAPIKey(*apiKey)
+	if err != nil {
+		return nil, err
+	}
+
+	return &v1.DeleteApiKeyResponse{}, nil
+}
+
 func (api headscaleV1APIServer) ListApiKeys(
 	ctx context.Context,
 	request *v1.ListApiKeysRequest,

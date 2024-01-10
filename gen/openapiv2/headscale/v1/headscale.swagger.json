@@ -69,6 +69,38 @@
         ]
       }
     },
+    "/api/v1/apikey/delete": {
+      "post": {
+        "operationId": "HeadscaleService_DeleteApiKey",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteApiKeyResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DeleteApiKeyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "HeadscaleService"
+        ]
+      }
+    },
     "/api/v1/apikey/expire": {
       "post": {
         "operationId": "HeadscaleService_ExpireApiKey",
@@ -944,6 +976,17 @@
           "$ref": "#/definitions/v1Node"
         }
       }
+    },
+    "v1DeleteApiKeyRequest": {
+      "type": "object",
+      "properties": {
+        "prefix": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DeleteApiKeyResponse": {
+      "type": "object"
     },
     "v1DeleteNodeResponse": {
       "type": "object"

@@ -27,6 +27,13 @@ message ExpireApiKeyRequest {
 message ExpireApiKeyResponse {
 }
 
+message DeleteApiKeyRequest {
+    string prefix = 1;
+}
+
+message DeleteApiKeyResponse {
+}
+
 message ListApiKeysRequest {
 }
 

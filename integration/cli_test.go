@@ -531,6 +531,34 @@ func TestApiKeyCommand(t *testing.T) {
 			)
 		}
 	}
+
+	// Delete two keys one which has expired and one which is still available
+	for idx := 2; idx < 4; idx++ {
+		_, err := headscale.Execute(
+			[]string{
+				"headscale",
+				"apikeys",
+				"delete",
+				"--prefix",
+				listedAPIKeys[idx].GetPrefix(),
+			},
+		)
+		assert.Nil(t, err)
+	}
+
+	var listedAfterDeleteAPIKeys []v1.ApiKey
+	err = executeAndUnmarshal(headscale,
+		[]string{
+			"headscale",
+			"apikeys",
+			"list",
+			"--output",
+			"json",
+		},
+		&listedAfterDeleteAPIKeys,
+	)
+	assert.Nil(t, err)
+	assert.Len(t, listedAfterDeleteAPIKeys, 3)
 }
 
 func TestNodeTagCommand(t *testing.T) {

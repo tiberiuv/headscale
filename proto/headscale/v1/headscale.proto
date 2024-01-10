@@ -173,6 +173,13 @@ service HeadscaleService {
         };
     }
 
+    rpc DeleteApiKey(DeleteApiKeyRequest) returns(DeleteApiKeyResponse) {
+        option(google.api.http) = {
+            post : "/api/v1/apikey/delete"
+            body : "*"
+        };
+    }
+
     rpc ListApiKeys(ListApiKeysRequest) returns(ListApiKeysResponse) {
         option(google.api.http) = {
             get : "/api/v1/apikey"
